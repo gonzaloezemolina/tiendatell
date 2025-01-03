@@ -11,4 +11,4 @@ const pool = new Pool({
     database: config.db.name
 });
 
-export default pool
+export default pool;
