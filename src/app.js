@@ -4,6 +4,7 @@ import __dirname from './utils.js';
 import morgan from 'morgan';
 import viewRouter from './routes/view.routes.js';
 import productRouter from './routes/product.routes.js';
+import sessionRouter from './routes/session.routes.js';
 
 const app = express();
 
@@ -21,3 +22,4 @@ const server = app.listen(PORT, () => {console.log(`Servidor escuchando en el pu
 
 app.use('/', viewRouter);
 app.use('/api', productRouter);
+app.use('/api', sessionRouter);

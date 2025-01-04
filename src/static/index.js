@@ -32,9 +32,20 @@ customLeft.forEach((item) => {
 });
 
 
-// Vamos a crear con PostgreSQL las distintas opciones. Una vez que conseguimos las opciones, vamos a por todo:
-// 1. Posiblemente tengamos un switch con distintos cases + break. 
+
+const steps = [];
+
+
+
+
+
+
+
+
+//  Vamos a crear con PostgreSQL las distintas opciones. Una vez que conseguimos las opciones, vamos a por todo:
+//  1. Posiblemente tengamos un switch con distintos cases + break. 
 // 2. El programa probablemente de error si le damos a varios endpoints a la vez. El fetch debe aparecer en el momento dado. no viene mal intentar una funcion y activarla despues de cada break
 // 3. De alguna forma u otra debemos implementar un 0/6. Tambien se debe volver para atras
 // 4. El usuario debe poder agregar la imagen de una tapa y poder eliminarla tambien.
 // 5. Se debe crear un objeto con todas las opciones seleccionadas
+// 6. Tema precio. Hay que averiguar como se puede ir aumentando respecto a cada opcion

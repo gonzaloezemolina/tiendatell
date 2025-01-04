@@ -29,4 +29,8 @@ router.get('/books', (req,res) => {
     res.sendFile(__dirname + '/views/books.html');
 });
 
+router.get('/register', (req,res) => {
+    res.sendFile(__dirname + '/views/register.html');
+});
+
 export default router;

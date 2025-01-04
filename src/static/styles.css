@@ -829,3 +829,34 @@ ul{
 #custom_left{
     border: 1px solid red;
 }
+
+
+.register_container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50%, 50%;
+    align-items: center;
+    justify-items: center;
+    background-color: #bdf5be;
+}
+
+.register_form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register_form{
+    border-radius: 10px;
+    background-color: white;
+    color: #2c2c2c;
+    gap: 15px;
+    width: 70%;
+    height: 75%;
+    button{
+        margin-top: 20px;
+        padding: 7px;
+        width: 150px;
+    }
+}
