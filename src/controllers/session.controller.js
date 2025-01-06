@@ -10,4 +10,33 @@ export default class sessionController{
             console.log("Error en register, sessionController:", error);
         }
     };
+
+    login = async (req,res) => {
+        try {
+            const {email,password} = req.body;
+            console.log('Datos recibidos:', {email, password});
+            if (! email || ! password) {
+                return res.status(400).json({message:'User not found'});
+            }
+            const result = await userModel.getUserByCredentials(email,password);
+            if (!result) {
+                return res.status(400).send({message:'Credenciales incorrectas'})
+            }
+            req.session.user = {
+                id: result.id,
+                email: result.email
+            };
+          
+            res.status(200).json({
+                message: "Logueado correctamente",
+                user: {
+                    id: result.id,
+                    email: result.email,
+                    role: result.role
+                }
+            });
+        } catch (error) {
+            console.log("Error en el login, sessionController:", error);
+        }
+    }
 }

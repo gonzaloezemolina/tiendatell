@@ -33,4 +33,8 @@ router.get('/register', (req,res) => {
     res.sendFile(__dirname + '/views/register.html');
 });
 
+router.get('/login', (req,res) => {
+    res.sendFile(__dirname + '/views/login.html');
+});
+
 export default router;

@@ -5,10 +5,18 @@ const createUser = async (name,email,password) => {
     VALUES ($1, $2, $3) RETURNING *;
     `;
     const values = [name,email,password];
-    const create = pool.query(query,values);
-    return (await create).rows[0];
+    const create = await pool.query(query,values);
+    return create.rows[0];
 };
 
+const getUserByCredentials = async (email,password) => {
+    const query = `SELECT * FROM users WHERE email = $1 AND password = $2;`
+    const values = [email,password];
+    const verifyUserCredentials = await pool.query(query,values);
+    return verifyUserCredentials.rows[0];
+}
+
 export default{
-    createUser
+    createUser,
+    getUserByCredentials
 };

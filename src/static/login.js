@@ -1,20 +1,20 @@
-const form = document.getElementById('register_form');
+const form = document.getElementById('loginForm');
 
 form.addEventListener("submit", async function (e){
     e.preventDefault();
     const data = new FormData(form);
     const object = {};
     data.forEach((value,key) => object[key]=value);
-    const response = await fetch('/api/register', {
+    const response = await fetch('/api/login', {
         method:'POST',
         body:JSON.stringify(object),
         headers:{
             "Content-Type": "application/json"
-        }
-    });
+        },
+        credentials: 'include'
+    })
     const result = await response.json();
-    console.log(result);
     if (response.status === 200) {
-        return window.location.replace("/login");
+        return window.location.replace("/");
       }
 });
