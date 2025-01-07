@@ -11,7 +11,8 @@ export default{
         name: process.env.DB_NAME,
     },
     app:{
-        port: process.env.PORT
+        port: process.env.PORT,
+        secret: process.env.SECRET
     }
 };
 

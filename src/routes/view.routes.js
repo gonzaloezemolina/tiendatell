@@ -37,4 +37,12 @@ router.get('/login', (req,res) => {
     res.sendFile(__dirname + '/views/login.html');
 });
 
+router.get('/attempt',(req,res) => {
+    res.render('attempt');
+});
+
+router.get('/account',(req,res) => {
+    res.render('account', {user: req.session.user});
+});
+
 export default router;

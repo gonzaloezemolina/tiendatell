@@ -1,6 +1,8 @@
 import express from 'express';
 import session from 'express-session';
+import handlebars from 'express-handlebars';
 import config from './config/config.js';
+import path from 'path';
 import __dirname from './utils.js';
 import morgan from 'morgan';
 import viewRouter from './routes/view.routes.js';
@@ -17,7 +19,7 @@ app.use(session({
       pool: pool,
       tableName: 'sessions'  
     }),
-    secret: 'tellSecret', 
+    secret: config.app.secret, 
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -26,6 +28,15 @@ app.use(session({
     }
 })
 )
+
+app.engine('.hbs', handlebars.engine({
+  extname:'hbs',
+  defaultLayout:'main',
+  layoutsDir:path.join(__dirname,'views/layout'),
+  partialsDir:path.join(__dirname, 'views/partials'),
+}));
+app.set('view engine', '.hbs');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -36,7 +47,6 @@ const PORT = config.app.port;
 
 const server = app.listen(PORT, () => {console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
-
 
 
 app.use('/', viewRouter);

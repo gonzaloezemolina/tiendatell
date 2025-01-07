@@ -860,3 +860,18 @@ ul{
         width: 150px;
     }
 }
+
+
+.attempt_container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account_container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

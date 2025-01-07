@@ -39,4 +39,18 @@ export default class sessionController{
             console.log("Error en el login, sessionController:", error);
         }
     }
+
+    logout = (req,res) => {
+        try {
+            req.session.destroy(error => {
+                if (error) {
+                    return res.status(500).send("Error in logout");
+                } else {
+                    return res.status(200).json({message:"Sucess in logout"});
+                }
+            })
+        } catch (error) {
+            console.log("Error en el logout, sessionController:", error);
+        }
+    }
 }

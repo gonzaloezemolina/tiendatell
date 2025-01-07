@@ -15,6 +15,6 @@ form.addEventListener("submit", async function (e){
     })
     const result = await response.json();
     if (response.status === 200) {
-        return window.location.replace("/");
+        return window.location.replace("/account");
       }
 });
