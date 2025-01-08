@@ -24,15 +24,20 @@ export default class sessionController{
             }
             req.session.user = {
                 id: result.id,
-                email: result.email
+                email: result.email,
+                name: result.name,
+                role: result.role,
+                isAdmin: result.is_admin
             };
-          
+            
             res.status(200).json({
                 message: "Logueado correctamente",
                 user: {
                     id: result.id,
                     email: result.email,
-                    role: result.role
+                    name: result.name,
+                    role: result.role,
+                    isAdmin: result.is_admin
                 }
             });
         } catch (error) {

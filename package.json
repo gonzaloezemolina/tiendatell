@@ -26,5 +26,8 @@
     "nodemailer": "^6.9.16",
     "nodemon": "^3.1.9",
     "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/connect-pg-simple": "^7.0.3"
   }
 }

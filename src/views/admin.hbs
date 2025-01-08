@@ -1,0 +1,8 @@
+<section class="admin">
+    {{#if user.isAdmin}}
+<h1>Bienvenido a tu panel {{user.name}}</h1>
+<p>Crea, edita y borra opciones de personalización</p>
+{{else}}
+<p>No tienes acceso a esta ruta, seras redirigido</p>
+{{/if}}
+</section>

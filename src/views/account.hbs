@@ -1,8 +1,15 @@
-<section class="account_container">
+   <section class="account_container">
     <div class="account_text">
         <h1>Tu cuenta</h1>
         <p>Hola {{user.name}}!</p>
+        <p>Email: {{user.email}}</p>
+        <p>Role:{{user.role}}</p>
     </div>
+    {{#if user.isAdmin}}
+    <div class="admin-panel">
+        <h3>Panel de Administración</h3>
+    </div>
+{{/if}}
 
     <button type="submit" id="logout_btn">Cerrar sesión</button>
 </section>

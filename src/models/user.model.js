@@ -10,7 +10,7 @@ const createUser = async (name,email,password) => {
 };
 
 const getUserByCredentials = async (email,password) => {
-    const query = `SELECT * FROM users WHERE email = $1 AND password = $2;`
+    const query = `SELECT * FROM users WHERE email = $1 AND password = $2; `
     const values = [email,password];
     const verifyUserCredentials = await pool.query(query,values);
     return verifyUserCredentials.rows[0];

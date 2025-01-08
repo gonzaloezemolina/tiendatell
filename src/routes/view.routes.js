@@ -37,12 +37,18 @@ router.get('/login', (req,res) => {
     res.sendFile(__dirname + '/views/login.html');
 });
 
-router.get('/attempt',(req,res) => {
-    res.render('attempt');
+router.get('/account',(req,res) => {
+    if (!req.session.user) {
+        return res.redirect('/login');
+    }
+    console.log("Sesión actual:", req.session);
+    res.render('account', {user: req.session.user});
 });
 
-router.get('/account',(req,res) => {
-    res.render('account', {user: req.session.user});
+
+router.get('/admin',(req,res) => {
+    console.log("Sesión actual:", req.session);
+    res.render('admin', {user: req.session.user});
 });
 
 export default router;
