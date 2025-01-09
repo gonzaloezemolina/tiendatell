@@ -9,4 +9,4 @@ const createCover = async (image_url) => {
 
 export default{
     createCover
-}
+};

@@ -2,7 +2,13 @@
     {{#if user.isAdmin}}
 <h1>Bienvenido a tu panel {{user.name}}</h1>
 <p>Crea, edita y borra opciones de personalización</p>
+<form action="" id="cover_form">
+    <input type="url" name="image_url" placeholder="Url de tapa">
+    <button type="submit">Crear</button>
+</form>
 {{else}}
 <p>No tienes acceso a esta ruta, seras redirigido</p>
 {{/if}}
 </section>
+
+<script src="admin.js"></script>

@@ -53,4 +53,4 @@ const server = app.listen(PORT, () => {console.log(`Servidor escuchando en el pu
 app.use('/', viewRouter);
 app.use('/api', productRouter);
 app.use('/api', sessionRouter);
-app.use('api/covers', coverRouter);
+app.use('/api/covers', coverRouter);

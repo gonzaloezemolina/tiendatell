@@ -7,7 +7,7 @@ export default class coverController {
             if (!image_url) {
                 return res.status(500).send('Es distinto a image_url');
             }
-            const newCover = await coverModel.createCover(image_url);
+            const newCover = await coverModel.createCover({image_url});
             if (newCover) {
                 return res.status(200).json({message:"Cover created"});
             }
