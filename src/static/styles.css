@@ -825,12 +825,6 @@ ul{
     }
 }
 
-
-#custom_left{
-    border: 1px solid red;
-}
-
-
 .register_container{
     height: 100vh;
     display: grid;
@@ -916,4 +910,22 @@ ul{
 
 .cover{
     border: 1px solid red;
+}
+
+
+.index_custom_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2{
+        font-family: "ComicN-B";
+        padding-bottom: 20px;
+    }
+    p{
+        font-family: "ComicN-R";
+        text-align: justify;
+    }
+    width: 100%;
+    border: 1px solid green;
 }
