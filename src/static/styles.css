@@ -882,3 +882,38 @@ ul{
     justify-content: center;
     align-items: center;
 }
+
+.covers_admin{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #bdf5be;
+    h2{
+        font-family: "ComicN-B";
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    p{
+        font-family: "ComicN-R";
+        text-align: center;
+    }
+}
+
+.grilla_admin{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+}
+
+.cover{
+    border: 1px solid red;
+}

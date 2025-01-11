@@ -6,9 +6,34 @@
     <input type="url" name="image_url" placeholder="Url de tapa">
     <button type="submit">Crear</button>
 </form>
+
+<form action="">
+    <input type="url" name="image_url" placeholder="Url de tapa">
+    <button type="submit">Actualizar</button>
+</form>
+
+
 {{else}}
 <p>No tienes acceso a esta ruta, seras redirigido</p>
 {{/if}}
 </section>
+
+
+
+<section class="covers_admin">
+    <h2>Tapas</h2>
+    <p>Administra las tapas de los libros</p>
+    <div class="grilla_admin">
+            <ul id="covers_list">  
+        {{#each covers}}
+        <li>
+            <img src="{{this.image_url}}" alt="Tapa" width="200px" height="200px">
+            <button data-id="{{this.id}}">Borrar</button>
+        </li>
+        {{/each}}
+    </ul>
+    </div>
+</section>
+
 
 <script src="admin.js"></script>

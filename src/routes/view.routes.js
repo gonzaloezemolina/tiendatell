@@ -46,8 +46,11 @@ router.get('/account',(req,res) => {
 });
 
 
-router.get('/admin',(req,res) => {
+router.get('/admin', async (req,res) => {
     console.log("Sesión actual:", req.session);
+    if (!req.session.user) {
+        return res.redirect('/login');
+    }
     res.render('admin', {user: req.session.user});
 });
 
