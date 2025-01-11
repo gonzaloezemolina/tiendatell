@@ -315,13 +315,56 @@ main{
     height: 100vh;
     background-color: white;
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 50% 50%;
     align-items: center;
     justify-items: center;
+    border: 1px solid red;
 }
 
-#custom_left{
+.index_custom_left{
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgb(0, 38, 255);
+}
+
+.index_custom_right{
+    border: 1px solid rgb(190, 223, 4);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn_step{
+    width: 150px;
+    background-color: #bdf5be;
+    font-family: "ComicN-B";
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    margin-top: 15px;
+}
+
+.btn_step:hover{
+    transition: .5s;
+    background-color: #545454;
+    color: white;
+}
+
+
+.covers_custom_container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
     border: 1px solid red;
+    overflow-y: scroll;
+    height: 400px;
+    width: 400px;
 }
 
 

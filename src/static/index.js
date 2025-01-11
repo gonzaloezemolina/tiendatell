@@ -30,48 +30,77 @@ const renderStep = () => {
             <p>Selecciona el tipo de producto que quieres personalizar</p>
             `;
             rightDiv.innerHTML = `
+            <div>
+                <img src="" alt="imagen de cuaderno o agenda" class="cuaderno_or_agenda">
+                <img src="" alt="imagen de cuaderno o agenda" class="cuaderno_or_agenda">
+            </div>
+            <div>
                 <button onclick="selectProduct('cuaderno')">Cuaderno</button>
-                <button onclick="selectProduct('agenda')">Agenda</button>
+                <button onclick="selectProduct('agenda')">Agenda</button> 
+            </div>
             `;
             break;
         case 2:
             leftDiv.innerHTML = `<h2>Elige la tapa.  Paso ${state.currentStep}/6</h2>`;
             rightDiv.innerHTML = `
-            <button onclick="goToPreviousStep()">Volver</button>
-            <p>TAPA1</p> 
-            <button onclick="goToNextStep()">Siguiente</button>
+            <div class="covers_custom_container">
+            </div>
+            <div>
+                <button onclick="goToPreviousStep()" class="btn_step">Volver</button>
+                <button onclick="goToNextStep()" class="btn_step">Siguiente</button>
+            </div>
             `
             break;
         case 3:
-            leftDiv.innerHTML = `<h2>Elige el interior.  Paso ${state.currentStep}/6</h2>`;
-            rightDiv.innerHTML = `
-            <button onclick="goToPreviousStep()">Volver</button>
-            <p>INTERIOR1</p> 
-            <button onclick="goToNextStep()">Siguiente</button>
-            `
+            if (state.selectedOptions.productType === 'cuaderno') {
+                leftDiv.innerHTML = `<h2>Elige el interior.  Paso ${state.currentStep}/6</h2>`;
+                rightDiv.innerHTML = `<div class="interior_custom_container">
+                    <img src="" alt="imagen de interior de cuaderno" class="interior_custom">
+                    <img>
+                    <img>
+                </div>
+                <div>
+                    <button onclick="goToPreviousStep()" class="btn_step">Volver</button>
+                    <button onclick="goToNextStep()" class="btn_step">Siguiente</button>
+                </div>
+                `
+            } else {
+                leftDiv.innerHTML = `<h2>Elige el interior.  Paso ${state.currentStep}/6</h2>`;
+                rightDiv.innerHTML = `
+                <h1>Elegiste una agenda</h1>
+                            <div>
+                    <button onclick="goToPreviousStep()" class="btn_step">Volver</button>
+                    <button onclick="goToNextStep()" class="btn_step">Siguiente</button>
+                </div>
+                `
+            }
             break;
         case 4:
             leftDiv.innerHTML = `<h2>Elige el tipo de encuadernación.  Paso ${state.currentStep}/6</h2>`;
             rightDiv.innerHTML = `
-            <button onclick="goToPreviousStep()">Volver</button>
-            <p>ENCUADERNACION1</p>
-            <button onclick="goToNextStep()">Siguiente</button> 
+                        <div>
+                <button onclick="goToPreviousStep()" class="btn_step">Volver</button>
+                <button onclick="goToNextStep()" class="btn_step">Siguiente</button>
+            </div>
             `
             break;
         case 5:
             leftDiv.innerHTML = `<h2>Elige los accesorios.  Paso ${state.currentStep}/6</h2>`;
             rightDiv.innerHTML = `
-            <button onclick="goToPreviousStep()">Volver</button>
-            <p>ACCESORIO1</p>
-            <button onclick="goToNextStep()">Siguiente</button> 
+                        <div>
+                <button onclick="goToPreviousStep()" class="btn_step">Volver</button>
+                <button onclick="goToNextStep()" class="btn_step">Siguiente</button>
+            </div>
             `
             break;
         case 6:
             leftDiv.innerHTML = `<h2>Personaliza tu producto.  Paso ${state.currentStep}/6</h2>`;
             rightDiv.innerHTML = `
-                <button onclick="goToPreviousStep()">Volver</button>
                     <textarea placeholder="Escribe aquí tus notas"></textarea>
-                <button onclick="goToNextStep()">Siguiente</button>
+                            <div>
+                <button onclick="goToPreviousStep()" class="btn_step">Volver</button>
+                <button onclick="goToNextStep()" class="btn_step">Siguiente</button>
+            </div>
             `;
             break
         default:
