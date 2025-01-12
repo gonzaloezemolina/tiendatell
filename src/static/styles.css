@@ -368,6 +368,43 @@ main{
 }
 
 
+.custom_notes_container{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interior_custom{
+    border: 1px solid #2c2c2c;
+    cursor: pointer;
+}
+
+figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+    figcaption{
+        font-family: "ComicN-R";
+        padding-top: 10px;
+    }
+}
+
+textarea{
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    font-family: "ComicN-B";
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 75%;
+    height: 50%;
+    border: #2c2c2c 1px solid;
+}
+
+
 .index_third_section{
     display: grid;
     grid-template-columns: repeat(3,1fr);
