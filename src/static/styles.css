@@ -903,6 +903,59 @@ ul{
             padding-bottom: 15px;
         }
     }
+
+    /* about */
+
+    #about_hero{
+        text-align: center;
+        h1{
+            font-size: 20px;
+        }
+    }
+
+    .about_tell{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: none;
+        height: 100vh;
+        background: linear-gradient(to bottom, #e9e9e9 45%, #bdf5be 0%);
+    }
+    .about_tell_video{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #video{
+        height: 50vh;
+        width: 80%;
+    }
+    .about_tell_text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 30px;
+    }
+    .about_me{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        h3{
+            font-size: 20px;
+        }
+        p{
+            width: 80%;
+            text-align: justify;
+            padding-bottom: 40px;
+        }
+    }
 }
 
 .register_container{

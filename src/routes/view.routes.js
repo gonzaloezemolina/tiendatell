@@ -21,14 +21,6 @@ router.get('/how-to-buy', (req,res) => {
     res.sendFile(__dirname + '/views/how-to-buy.html');
 });
 
-router.get('/agendas', (req,res) => {
-    res.sendFile(__dirname + '/views/agendas.html');
-});
-
-router.get('/books', (req,res) => {
-    res.sendFile(__dirname + '/views/books.html');
-});
-
 router.get('/register', (req,res) => {
     res.sendFile(__dirname + '/views/register.html');
 });
@@ -45,13 +37,20 @@ router.get('/account',(req,res) => {
     res.render('account', {user: req.session.user});
 });
 
-
 router.get('/admin', async (req,res) => {
     console.log("Sesión actual:", req.session);
     if (!req.session.user) {
         return res.redirect('/login');
     }
     res.render('admin', {user: req.session.user});
+});
+
+router.get('/products', async (req,res) => {
+    res.render('products');
+});
+
+router.get('/custom', async (req,res) => {
+    res.render('custom');
 });
 
 export default router;
